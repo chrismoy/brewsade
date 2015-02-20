@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  beer_id: 
+  user_id: 
+
+two:
+  beer_id: 
+  user_id: 
