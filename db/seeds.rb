@@ -51,7 +51,14 @@ end
 
 puts "#{beer_count} beers have been added to the database"
 
-locations = []
+locations = [["Madison Vine Wines", "1340 W Madison St, Chicago, IL 60607"],
+             ["Arista Foods", "112 N May St, Chicago, IL 60607"],
+             ["Tenzing", "165 N Morgan St, Chicago, IL 60607"],
+             ["Cream Wine Company", "1035 W Lake St, Chicago, IL 60607"],
+             ["Occasions Chicago", "116 N Willard Ct, Chicago, IL 60607"],
+             ["City Winery", "1200 W Randolph St, Chicago, IL 60607"],
+             ["Cone Gourmet Ice Cream", "1047 W Madison Ave, Chicago, IL 60607"],
+             ["Mars Gallery", "1139 W Fulton Market St, Chicago, IL 60607"]]
 
 location_count = 0
 
