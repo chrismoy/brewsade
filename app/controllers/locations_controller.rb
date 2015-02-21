@@ -6,7 +6,8 @@ class LocationsController < ApplicationController
   def index
     @locations = Location.all
     @beers = Beer.all
-    @first_beers = Beer.take(2)
+    @favorite_beers = Favorite.all
+    @beer_match = BeerMatch.where(:beer_id => @favorite_beers)
   end
 
   # GET /locations/1

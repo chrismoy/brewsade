@@ -20,7 +20,7 @@
 // }
 
 var plotMarkers = function() {
-  if (window.Locations == undefined) {
+  if (window.Matches == undefined) {
     return;
   }
 
@@ -37,8 +37,8 @@ var plotMarkers = function() {
         mapTypeId: google.maps.MapTypeId.ROADMAP
       });
 
-      for (var i = 0; i < window.Locations.length; i++) {
-        var place = window.Locations[i];
+      for (var i = 0; i < window.Matches.length; i++) {
+        var place = window.Matches[i];
         var position = new google.maps.LatLng(place.latitude, place.longitude);
 
         var marker = new google.maps.Marker({

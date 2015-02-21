@@ -61,29 +61,30 @@
       border-width: 0 0 2px 2px;
       background-color: transparent;
     }
-      .top-left {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 200px;
-      .top-left-table {
-        margin-bottom: 0;
-        background-color: rgba(0,0,0,0.8);
-        color: #DDD;
-      }
-    }
     .bottom-left {
       position: absolute;
       bottom: 0;
-      left: 0;
-      width: 400px;
-      height: 400px;
+      left: 25%;
+      width: 50%;
+      height: 100%;
       overflow-y: auto;
       overflow-x: hidden;
       .bottom-left-table {
+        position: absolute;
+        width: 100%;
         margin-bottom: 0;
-        background-color: rgba(0,0,0,0.8);
+        background-color: rgba(0,0,0,0);
         color: #DDD;
+        tr:hover {
+          background-color: rgba(200,200,200,0.3)
+        }
+        td {
+          width: 33%;
+        }
+        a {
+          color: #DDD;
+          text-decoration: none;
+        }
       }
     }
   }

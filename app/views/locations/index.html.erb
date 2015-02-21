@@ -23,11 +23,11 @@
             <th>Brewery</th>
             <th>Type</th>
           </tr>
-          <% @first_beers.each do |beer| %>
+          <% @favorite_beers.each do |favorite| %>
           <tr>
-            <td><%= beer.name %></td>
-            <td><%= beer.brewery %></td>
-            <td><%= beer.beer_type %></td>
+            <td><%= favorite.beer.name %></td>
+            <td><%= favorite.beer.brewery %></td>
+            <td><%= favorite.beer.beer_type %></td>
           </tr>
           <% end %>
         </table>
@@ -42,29 +42,10 @@
   </div>
 
 
-
-
-
   <div class="shade">
     <button type="button" class="btn btn-danger" id="back-btn">
       <i class="fa fa-times fa-lg"></i>
     </button>
-    <div class="top-left">
-      <table class="table top-left-table">
-        <tr>
-          <th>Name</th>
-          <th>Brewery</th>
-          <th>Type</th>
-        </tr>
-        <% @first_beers.each do |beer| %>
-        <tr>
-          <td><%= beer.name %></td>
-          <td><%= beer.brewery %></td>
-          <td><%= beer.beer_type %></td>
-        </tr>
-        <% end %>
-      </table>
-    </div>
     <div class="bottom-left">
       <table class="table bottom-left-table">
         <tr>
@@ -74,9 +55,9 @@
         </tr>
         <% @beers.each do |beer| %>
         <tr>
-          <td><%= beer.name %></td>
-          <td><%= beer.brewery %></td>
-          <td><%= beer.beer_type %></td>
+          <td><%= link_to beer.name, favorites_path(:beer_id => beer.id), :method => "post" %></td>
+          <td><%= link_to beer.brewery, favorites_path(beer), :method => "post" %></td>
+          <td><%= link_to beer.beer_type, favorites_path(beer), :method => "post" %></td>
         </tr>
         <% end %>
       </table>
@@ -85,5 +66,5 @@
 </div>
 
 <script type="text/javascript">
-  window.Locations = <%= @locations.to_json.html_safe %>;
+  window.Matches = <%= @beer_matches.to_json.html_safe %>;
 </script>

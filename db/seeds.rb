@@ -13,7 +13,7 @@ beers = [["Galactic Imperial Red", "HopWorks", "IPA", "https://aleheads.files.wo
 ["Matilda", "Goose Island", "Belgian", "https://aleheads.files.wordpress.com/2011/10/matilda.jpg"],
 ["Daisy Cutter Pale Ale", "Half Acre", "American Pale Ale", "https://aleheads.files.wordpress.com/2011/10/laughing-dog-dogzilla.jpg"],
 ["Over Ale", "Half Acre", "American Brown Ale", "https://aleheads.files.wordpress.com/2011/10/laughing-dog-dogzilla.jpg"],
-["Gangster Hopped-Up Amber Ale", "Andersonville Brewing", "https://aleheads.files.wordpress.com/2011/10/modus-hoperandi.jpg"],
+["Gangster Hopped-Up Amber Ale", "Andersonville Brewing", "Amber Ale", "https://aleheads.files.wordpress.com/2011/10/modus-hoperandi.jpg"],
 ["Mathias Imperial IPA", "Haymarket", "IPA", "https://aleheads.files.wordpress.com/2011/10/lost-abbey-angels-share.jpg"],
 ["Flying Pig Imperial IPA", "Limestone", "IPA", "https://aleheads.files.wordpress.com/2011/10/metro-flywheel.jpg"],
 ["Wheatlander", "Limestone", "Hefeweizen", "https://aleheads.files.wordpress.com/2011/10/hop-czar.jpg"],
