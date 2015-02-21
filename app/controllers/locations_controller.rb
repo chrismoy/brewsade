@@ -5,6 +5,8 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.all
+    @beers = Beer.all
+    @first_beers = Beer.take(2)
   end
 
   # GET /locations/1
