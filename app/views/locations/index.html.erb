@@ -1,8 +1,4 @@
-<div class="jumbotron main-jumbo">
-  <div class="container">
-
-  </div>
-</div>
+<div id="map"></div>
 
 <div class="container">
   <div class="row">
@@ -61,3 +57,7 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  window.Locations = <%= @locations.to_json.html_safe %>;
+</script>
