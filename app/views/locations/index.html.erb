@@ -31,11 +31,18 @@
             <td><%= favorite.beer.name %></td>
             <td><%= favorite.beer.brewery %></td>
             <td><%= favorite.beer.beer_type %></td>
+            <td class="trash">
+            <%= link_to favorite_path(favorite), method: :delete do %>
+              <i class="fa fa-trash-o"></i>
+            <% end %>
+            </td>
           </tr>
           <% end %>
         </table>
       </div>
     </div>
+
+    <%= check_box_tag "trash" %>
 
     <div class="col-xs-12 btn-div">
       <button type="button" class="btn btn-select" id="new-beers-btn">

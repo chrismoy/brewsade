@@ -19,6 +19,9 @@
     background-color: #FEFEFE;
     .table {
       width: 100%;
+      .trash a {
+        color: red;
+      }
     }
     .btn-div {
       text-align: center;
