@@ -33,6 +33,9 @@
     border: 0 solid gray;
     border-width: 5px 5px 0 0;
     display: none;
+    #close-tip-btn {
+      
+    }
   }
   .shade {
     position: absolute;
@@ -42,6 +45,9 @@
     height: 100%;
     background-color: rgba(0,0,0,0.8);
     display: none;
+    #back-btn {
+      float: right;
+    }
       .top-left {
       position: absolute;
       top: 0;

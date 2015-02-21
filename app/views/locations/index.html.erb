@@ -5,6 +5,7 @@
     <%= form_tag beer_matches_path, id: "tip-box" do %>
       <%= text_field_tag 'beer', nil, class: "form-control",
                           placeholder: "What beer did you find?" %>
+
       <%= text_field_tag 'location', nil, class: "form-control",
                           placeholder: "Where was it?" %>
       <%= submit_tag value = "Leave a tip!", class: "btn btn-primary" %>
@@ -29,6 +30,10 @@
         </table>
       </div>
     </div>
+
+    <button type="button" class="btn btn-primary" id="all-beers-btn">
+        <i class="fa fa-shopping-cart"></i>
+      </button>
   </div>
 
 
@@ -37,6 +42,9 @@
 
   <div class="shade">
     <div class="top-left">
+      <button type="button" class="btn btn-alert" id="back-btn">
+        <i class="fa fa-ban"></i>
+      </button>
       <table class="table top-left-table">
         <tr>
           <th>Name</th>
