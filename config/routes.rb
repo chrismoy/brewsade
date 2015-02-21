@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
-  get 'favorites/new'
-
-  get 'favorites/create'
-
-  get 'favorites/destroy'
+  root      'beers#index'
 
   devise_for :users
-  root      'users#new'
 
   resources :locations
 
   resources :beers
+
+  resource :favorites,  only: [:new, :create, :destroy]
 end
