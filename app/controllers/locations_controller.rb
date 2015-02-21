@@ -6,8 +6,10 @@ class LocationsController < ApplicationController
   def index
     @locations = Location.all
     @beers = Beer.all
-    @favorite_beers = Favorite.all
-    @beer_match = BeerMatch.where(:beer_id => @favorite_beers)
+    @favorites = Favorite.all
+    @favorite_beers = Favorite.all.collect { |favorite| favorite[:beer_id]}
+    @beer_matches = BeerMatch.where(:beer_id => @favorite_beers).collect { |match| match[:location_id]}
+    @beer_match_locations = Location.where(:id => @beer_matches)
   end
 
   # GET /locations/1

@@ -23,7 +23,7 @@
             <th>Brewery</th>
             <th>Type</th>
           </tr>
-          <% @favorite_beers.each do |favorite| %>
+          <% @favorites.each do |favorite| %>
           <tr>
             <td><%= favorite.beer.name %></td>
             <td><%= favorite.beer.brewery %></td>
@@ -66,5 +66,5 @@
 </div>
 
 <script type="text/javascript">
-  window.Matches = <%= @beer_matches.to_json.html_safe %>;
+  window.Matches = <%= @beer_match_locations.to_json.html_safe %>;
 </script>
