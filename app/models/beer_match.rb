@@ -13,7 +13,7 @@ class BeerMatch < ActiveRecord::Base
   end
 
   def beer_message(follower)
-    client = Twilio::REST::Client.new Figaro.env.twilio_account_sid, Figaro.env.twilio_auth_token
+    client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
 
     client.account.messages.create({
       :from => '+17089720240',
