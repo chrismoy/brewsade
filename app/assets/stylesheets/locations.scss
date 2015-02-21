@@ -10,13 +10,15 @@
     position: absolute;
     top: 0;
     left: 0;
-    @media (max-width: 767px) { width: 20vw; }
-    @media (min-width: 768px) { width: 10vw; }
+    // @media (max-width: 767px) { width: 20vw; }
+    // @media (min-width: 768px) { width: 10vw; }
+    width: 100px;
     table {
       width: 100%;
       .button {
-        @media (max-width: 767px) { height: 20vw; }
-        @media (min-width: 768px) { height: 10vw; }
+        // @media (max-width: 767px) { height: 20vw; }
+        // @media (min-width: 768px) { height: 10vw; }
+        height: 100px;
         margin: 0;
         width: 100%;
         background-color: red;
