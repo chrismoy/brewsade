@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'favorites/destroy'
 
   devise_for :users
-  root      'users#new'
+  root      'beers#index'
 
   resources :locations
 
