@@ -1,13 +1,13 @@
 <div class="dashboard">
   <div class="col-md-8 map-div">
     <div id="map"></div>
-    <button type="button" class="btn" id="tip-btn">Find Beer?</button>
+    <button type="button" class="btn btn-primary" id="tip-btn">Did you make a find?</button>
     <%= form_tag beer_matches_path, id: "tip-box" do %>
       <button type="button" class="btn btn-link" id="close-tip-btn">
         <i class="fa fa-times"></i>
       </button>
-      <%= text_field_tag 'beer', nil, class: "form-control",
-                          placeholder: "What beer did you find?" %>
+      <%= select_tag 'beer', options_from_collection_for_select(@beers, "id", "name"),
+                              include_blank: false, class: "chosen-select form-control" %>
 
       <%= text_field_tag 'location', nil, class: "form-control",
                           placeholder: "Where was it?" %>
