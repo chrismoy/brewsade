@@ -3,8 +3,9 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    @favorite = Favorite.new
+    @favorite = Favorite.new  # This action doesn't assign favorites a user. The first like I command lined to forace a user.
     @favorite.beer_id = params[:beer_id]
+    @favorite.user = current_user
     if @favorite.save
       redirect_to :back
     else
