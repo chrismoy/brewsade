@@ -26,21 +26,21 @@
   }
   #tip-btn {
     position: absolute;
-    bottom: 10px;
+    top: 10px;
     left: 10px;
     font-size: 1.2em;
   }
   #tip-box {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     border: 0 solid gray;
-    border-width: 5px 5px 0 0;
+    border-width: 0 5px 5px 0;
     display: none;
     #close-tip-btn {
       position: absolute;
-      right: -9px;
-      top: -8px;
+      right: -35px;
+      bottom: 0;
       color: black;
     }
   }
