@@ -1,9 +1,11 @@
 class BeerMatchesController < ApplicationController
   def create
     location = params[:location]
+    latitude = params[:latitude]
+    longitude = params[:longitude]
     beer = Beer.find(params[:beer])
 
-    google_place = $client.spots(41.8826104, -87.6569993, name: location)[0]
+    google_place = $client.spots(latitude.to_f, longitude.to_f, name: location)[0]
 
     location = Location.new(name: google_place.name,
                             address: google_place.vicinity)

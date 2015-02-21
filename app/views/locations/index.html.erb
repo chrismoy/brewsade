@@ -6,11 +6,14 @@
       <button type="button" class="btn btn-link" id="close-tip-btn">
         <i class="fa fa-times"></i>
       </button>
+      <%= hidden_field_tag :latitude, "", id: "latitude" %>
+      <%= hidden_field_tag :longitude, "", id: "longitude" %>
       <%= select_tag 'beer', options_from_collection_for_select(@beers, "id", "name"),
                               include_blank: false, class: "chosen-select form-control" %>
 
       <%= text_field_tag 'location', nil, class: "form-control",
-                          placeholder: "Where was it?" %>
+                          placeholder: "Where was it?", 
+                          onclick: "getLocation()"  %>
       <%= submit_tag value = "Leave a tip!", class: "btn btn-primary" %>
     <% end %>
   </div>
@@ -67,4 +70,11 @@
 
 <script type="text/javascript">
   window.Matches = <%= @beer_match_locations.to_json.html_safe %>;
+  var $latitudeField = $("#latitude");
+  var $longitudeField = $("#longitude");
 </script>
+
+
+
+
+
