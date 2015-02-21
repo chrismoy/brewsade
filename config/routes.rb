@@ -7,5 +7,7 @@
 
   resources :beers
 
-  resource :favorites,  only: [:new, :create, :destroy]
+  resource :favorites,       only: [:new, :create, :destroy]
+
+  resources :beer_matches,   only: [:create, :destroy]
 end

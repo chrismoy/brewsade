@@ -1,3 +1,15 @@
-// Place all the styles related to the locations controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.main-jumbo {
+  background-image: url('http://www.madmanblog.com/wp-content/uploads/2012/08/Rome-Google-Map.jpg');
+  background-size: cover;
+  height: 400px;
+}
+
+.all-beer-table {
+  height: 400px;
+  overflow-y: auto;
+  border: 1px solid #222;
+}
+
+.my-beer-table {
+  border: 1px solid #222;
+}
