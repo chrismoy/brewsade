@@ -1,5 +1,5 @@
   Rails.application.routes.draw do
-  root      'beers#index'
+  root      'locations#index'
 
   devise_for :users
 

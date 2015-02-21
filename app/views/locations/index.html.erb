@@ -1,36 +1,13 @@
 <div class="dashboard">
   <div id="map">
   </div>
-  <div class="top-left">
-    <table class="table top-left-table">
-      <tr>
-        <th>Name</th>
-        <th>Brewery</th>
-        <th>Type</th>
-      </tr>
-      <% @first_beers.each do |beer| %>
-      <tr>
-        <td><%= beer.name %></td>
-        <td><%= beer.brewery %></td>
-        <td><%= beer.beer_type %></td>
-      </tr>
-      <% end %>
-    </table>
-  </div>
-  <div class="bottom-left">
-    <table class="table bottom-left-table">
-      <tr>
-        <th>Name</th>
-        <th>Brewery</th>
-        <th>Type</th>
-      </tr>
-      <% @beers.each do |beer| %>
-      <tr>
-        <td><%= beer.name %></td>
-        <td><%= beer.brewery %></td>
-        <td><%= beer.beer_type %></td>
-      </tr>
-      <% end %>
+  <div class="menu">
+    <table>
+      <tr><td class="button">1</td></tr>
+      <tr><td class="button">1</td></tr>
+      <tr><td class="button">1</td></tr>
+      <tr><td class="button">1</td></tr>
+      <tr><td class="button">1</td></tr>
     </table>
   </div>
   <%= form_tag beer_matches_path, class: "bottom-right" do %>
@@ -40,6 +17,40 @@
                         placeholder: "Where was it?" %>
     <%= submit_tag value = "Leave a tip!", class: "btn btn-primary" %>
   <% end %>
+  <div class="shade">
+    <div class="top-left">
+      <table class="table top-left-table">
+        <tr>
+          <th>Name</th>
+          <th>Brewery</th>
+          <th>Type</th>
+        </tr>
+        <% @first_beers.each do |beer| %>
+        <tr>
+          <td><%= beer.name %></td>
+          <td><%= beer.brewery %></td>
+          <td><%= beer.beer_type %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+    <div class="bottom-left">
+      <table class="table bottom-left-table">
+        <tr>
+          <th>Name</th>
+          <th>Brewery</th>
+          <th>Type</th>
+        </tr>
+        <% @beers.each do |beer| %>
+        <tr>
+          <td><%= beer.name %></td>
+          <td><%= beer.brewery %></td>
+          <td><%= beer.beer_type %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
 </div>
 
 <script type="text/javascript">
