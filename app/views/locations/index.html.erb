@@ -1,61 +1,45 @@
-<div id="map"></div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <div class="row">
-        <div class="col-md-6 all-beer-table">
-          <h2>All Beer</h2>
-          <table class="table">
-            <tr>
-              <th>Name</th>
-              <th>Brewery</th>
-              <th>Type</th>
-            </tr>
-            <% @beers.each do |beer| %>
-            <tr>
-              <td><%= beer.name %></td>
-              <td><%= beer.brewery %></td>
-              <td><%= beer.beer_type %></td>
-            </tr>
-            <% end %>
-          </table>
-        </div>
-
-        <div class="col-md-6 my-beer-table">
-          <h2>My Beer</h2>
-          <table class="table">
-            <table class="table">
-            <tr>
-              <th>Name</th>
-              <th>Brewery</th>
-              <th>Type</th>
-            </tr>
-            <% @first_beers.each do |beer| %>
-            <tr>
-              <td><%= beer.name %></td>
-              <td><%= beer.brewery %></td>
-              <td><%= beer.beer_type %></td>
-            </tr>
-            <% end %>
-          </table>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-
-      <%= form_tag beer_matches_path do %>
-        <%= text_field_tag 'beer', nil, class: "form-control",
-                            placeholder: "What beer did you find?" %>
-        <%= text_field_tag 'location', nil, class: "form-control",
-                            placeholder: "Where was it?" %>
-        <%= submit_tag value = "Leave tip", class: "btn btn-primary" %>
-      <% end %>
-
-    </div>
+<div class="dashboard">
+  <div id="map">
   </div>
+  <div class="top-left">
+    <table class="table top-left-table">
+      <tr>
+        <th>Name</th>
+        <th>Brewery</th>
+        <th>Type</th>
+      </tr>
+      <% @first_beers.each do |beer| %>
+      <tr>
+        <td><%= beer.name %></td>
+        <td><%= beer.brewery %></td>
+        <td><%= beer.beer_type %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="bottom-left">
+    <table class="table bottom-left-table">
+      <tr>
+        <th>Name</th>
+        <th>Brewery</th>
+        <th>Type</th>
+      </tr>
+      <% @beers.each do |beer| %>
+      <tr>
+        <td><%= beer.name %></td>
+        <td><%= beer.brewery %></td>
+        <td><%= beer.beer_type %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+  <%= form_tag beer_matches_path, class: "bottom-right" do %>
+    <%= text_field_tag 'beer', nil, class: "form-control",
+                        placeholder: "What beer did you find?" %>
+    <%= text_field_tag 'location', nil, class: "form-control",
+                        placeholder: "Where was it?" %>
+    <%= submit_tag value = "Leave a tip!", class: "btn btn-primary" %>
+  <% end %>
 </div>
 
 <script type="text/javascript">

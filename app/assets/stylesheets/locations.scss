@@ -1,21 +1,39 @@
-.main-jumbo {
-  background-image: url('http://www.madmanblog.com/wp-content/uploads/2012/08/Rome-Google-Map.jpg');
-  background-size: cover;
-  height: 400px;
-}
-
-.all-beer-table {
-  height: 400px;
-  overflow-y: auto;
-  border: 1px solid #222;
-}
-
-.my-beer-table {
-  border: 1px solid #222;
-}
-
-#map {
-  height: 30vh;
-  width: 100%;
-  border: 1px solid;
+.dashboard {
+  position: relative;
+  #map {
+    height: 100vh;
+    width: 100vw;
+    display: relative;
+    border: 1px solid black;
+  }
+  .top-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    .top-left-table {
+      background-color: rgba(0,0,0,0.8);
+      color: #DDD;
+    }
+  }
+  .bottom-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 400px;
+    height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    .bottom-left-table {
+      background-color: rgba(0,0,0,0.8);
+      color: #DDD;
+    }
+  }
+  .bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.8);
+    color: #DDD;
+  }
 }

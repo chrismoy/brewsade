@@ -10,8 +10,10 @@
 </head>
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<% flash.each do |message_type, message| %>
+  <%= content_tag(:div, message, 
+                    class: "alert-box #{message_type}") %>
+<% end %>
 
 <%= yield %>
 
