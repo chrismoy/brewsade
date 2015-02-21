@@ -1,15 +1,233 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400);
+
+/* SHARED ELEMENTS */
+
+main {
+  margin: auto;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  font-family: Helvetica, Sans-serif;
+}
+
+a {
+  color: #0076FF;
+  text-decoration: none;
+}
+
+a.disabled {
+  color: #B1B1B1;
+}
+
+hr {
+  border: 1px solid #CCCCCC;
+  border-width: 1px 0 0 0;
+}
+
+#wrapper {
+ margin: auto;
+ width: 50%;
+}
+
+/* MISC */
+
+.txt-center {
+  text-align: center;
+}
+
+
+/* HEADER */
+
+header {
+ height: 50px;
+}
+
+/* MAIN NAV */
+
+.main-nav ul {
+  margin: 0;
+  padding: 0;
+  height: 50px;
+}
+
+.main-nav li {
+  list-style: none;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 50px;f
+  height: 100%;
+  margin: 0 -4px 0 0;
+  padding: 0;
+  height: 50px;
+}
+
+.main-nav .nav-left {
+  width: 20%;
+  padding-left: 10px;
+}
+
+
+.main-nav .nav-center {
+  width: 60%;
+}
+
+.main-nav .nav-right {
+  width: 20%;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.main-nav {
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  background: #F8F8F8;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.main-nav .screen-title {
+  text-align: center;
+  margin: 0;
+  font-size: 18px;
+}
+
+/* MAIN CONTENT */
+
+main {
+  background-color: #FFF;
+  padding: 20px;
+  text-align: center;
+}
+
+/* FORM */
+
+label {
+  text-align: left;
+  display: block;
+  margin-bottom: 10px;
+}
+
+select,
+input[type="text"],
+input[type="date"],
+input[type="number"],
+#passwordSignIn,
+#emailSignIn,
+input {
+  background: #FFF;
+  border-radius: 0;
+  border: 1px solid #CCCCCC;
+  width: 100%;
+  font-size: 20px;
+  padding: 8px 12px;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+}
+
+fieldset {
+  width: 90%;
+  margin: auto auto 20px auto;
+  border: none;
+}
+
+/* BUTTONS */
+
+.btn {
+  display: inline-block;
+  vertical-align: top;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 12px;
+  color: #2087fc;
+  font-size: 16px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px #2087fc;
+  -webkit-appearance: none;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-small {
+  height: 30px;
+  line-height: 30px;
+  padding: 0 20px;
+  font-size: 14px;
+}
+
+.btn-success {
+  font-weight: 500;
+  color: white;
+  background: #46ca5e;
+  box-shadow: none;
+}
+
+.btn-danger {
+  font-weight: 500;
+  color: white;
+  background: #fd3c31;
+  box-shadow: none;
+}
+
+/* TIMER */
+
+.timer-container {
+  margin: 40px 0;
+}
+
+.timer-caption {
+  color: #777;
+}
+
+.timer {
+  border: 1px solid #CCCCCC;
+  margin: 0 auto;
+  border-width: 1px 0;
+  font-size: 100px;
+  font-weight: 200;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* STOP SCREEN */
+
+.stop-screen {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* LOG SCREEN */
+
+.log-screen form {
+  margin-top: 60px;
+}
+
+/* CONFIRM SCREEN */
+
+.confirm-screen-message {
+  font-size: 27px;
+  margin-top: 40%;
+}
+
+
+
+
+
