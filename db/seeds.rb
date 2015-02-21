@@ -92,10 +92,10 @@ puts "#{favorite_count} favorites have been added to the database"
 
 beer_match_count = 0
 
-for i in 1..3 do
+for i in 1..5 do
   for j in 1..3 do
     l = Location.find(i)
-    l.beers << Beer.find(j)
+    l.beers << Beer.all.sample
     beer_match_count += 1
   end
 end
