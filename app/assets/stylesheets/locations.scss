@@ -21,12 +21,18 @@
       width: 100%;
     }
   }
-  .bottom-right {
+  #tip-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+  #tip-box {
     position: absolute;
     bottom: 0;
     left: 0;
     border: 0 solid gray;
     border-width: 5px 5px 0 0;
+    display: none;
   }
   .shade {
     position: absolute;
