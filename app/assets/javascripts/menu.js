@@ -17,3 +17,13 @@ $(document).ready(function() {
   });
 
 });
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(addPositionsToForm);
+  }
+}
+function addPositionsToForm(position) {
+  $latitudeField.val(position.coords.latitude);
+  $longitudeField.val(position.coords.longitude);
+}
