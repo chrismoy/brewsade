@@ -61,3 +61,45 @@
     </div>
   </div>
 </div>
+
+<div id="map"></div>
+
+<style type="text/css">
+  #map {
+    height: 700px;
+    border: 1px solid #000;
+  }
+</style>
+
+<script type="text/javascript">
+  window.DataSet = <%= @locations.to_json.html_safe %>;
+
+  window.onload = function() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        var currentPosition = new google.maps.LatLng(
+          position.coords.latitude,
+          position.coords.longitude
+        );
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: currentPosition,
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+        for (var i = 0; i < window.DataSet.length; i++) {
+          var place = window.DataSet[i];
+          var position = new google.maps.LatLng(place.latitude, place.longitude);
+
+          var marker = new google.maps.Marker({
+              position: position,
+              map: map,
+              draggable: false
+          });
+        };
+      });
+    }
+  };
+</script>
+>>>>>>> 4bcc9078d5a78e6fad501a7a98ba4f33dfff91cc
