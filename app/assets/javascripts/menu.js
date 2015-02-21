@@ -1,11 +1,14 @@
 $(document).ready(function() {
 
   $('#tip-btn').click(function() {
-    $('#tip-box').slideToggle("slow");
-    $('#tip-close-button').toggle();
+    $('#tip-box').slideToggle(400);
   });
 
-  $('#all-beers-btn').click(function() {
+  $('#close-tip-btn').click(function() {
+    $('#tip-box').slideToggle(400);
+  });
+
+  $('#new-beers-btn').click(function() {
     $('.shade').show(400);
   });
 
