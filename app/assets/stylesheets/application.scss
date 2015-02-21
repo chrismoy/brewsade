@@ -14,6 +14,11 @@ main {
   margin: auto;
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -23,10 +28,19 @@ html {
 }
 
 body {
-  width: 100%;
   margin: 0;
   padding: 0;
   font-family: Helvetica, Sans-serif;
+}
+
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 a {
