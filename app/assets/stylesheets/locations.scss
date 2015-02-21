@@ -15,6 +15,7 @@
   }
   .menu {
     height: 100%;
+    @media (max-width: 991px) { height: 67% };
     background-color: #FEFEFE;
     .table {
       width: 100%;
