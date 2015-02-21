@@ -69,6 +69,45 @@ end
 
 puts "#{location_count} locations have been added to the database"
 
+u = User.create!(
+  email: "example@railstutorial.org",
+  password: "password",
+  password_confirmation: "password",
+  phone: "773-202-LUNA"
+)
+
+puts "#{User.count} users have been added to the database"
+
+favorite_count = 0
+
+for i in 1..10 do
+  Favorite.create!(
+    user: u,
+    beer: Beer.find(i)
+  )
+  favorite_count += 1
+end
+
+puts "#{favorite_count} favorites have been added to the database"
+
+beer_match_count = 0
+
+for i in 1..3 do
+  for j in 1..3 do
+    l = Location.find(i)
+    l.beers << Beer.find(j)
+    beer_match_count += 1
+  end
+end
+
+puts "#{beer_match_count} beer_matches have been added to the database"
+
+
+
+
+
+
+
 
 
 
