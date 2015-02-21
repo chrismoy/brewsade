@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'twilio-ruby'
+
 gem 'rails',                    '4.2.0'
 gem 'sass-rails',               '5.0.1'
 gem 'devise'
