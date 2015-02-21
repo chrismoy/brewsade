@@ -58,7 +58,39 @@ locations = [["Madison Vine Wines", "1340 W Madison St, Chicago, IL 60607"],
              ["Occasions Chicago", "116 N Willard Ct, Chicago, IL 60607"],
              ["City Winery", "1200 W Randolph St, Chicago, IL 60607"],
              ["Cone Gourmet Ice Cream", "1047 W Madison Ave, Chicago, IL 60607"],
-             ["Mars Gallery", "1139 W Fulton Market St, Chicago, IL 60607"]]
+             ["Mars Gallery", "1139 W Fulton Market St, Chicago, IL 60607"]
+             ["Map Room", "1949 N Hoyne Ave, Chicago, IL 60647"],
+             ["Handlebar", "2311 W North Ave, Chicago, IL 60647",]
+             ["Bar Bar Blacksheep", "1415 N Milwaukee Ave, Chicago, IL 60622"]
+             ["Bangers and Lace", "1670 W Division St, Chicago, IL 60622"]
+             ["Small Bar", "2956 N Albany Ave, Chicago, IL 60618"]
+             ["Links Taproom", "1559 N Milwaukee Ave, Chicago, IL 60622"]
+             ["Emporium Arcade Bar", "1366 N Milwaukee Ave, Chicago, IL 60622"]
+             ["Piece Brewery", "1927 W North Ave, Chicago, IL 60622"]
+             ["Chop Shop and 1st Ward Brewery", "2033 W North Ave, Chicago, IL 60647"]
+             ["Northside Bar and Grill", "1635 N Damen Ave, Chicago, IL 60647"]
+             ["The Boundary Tavern", "1932 W Division St, Chicago, IL 60622"]
+             ["Nick's Beer Garden", "1516 N Milwaukee Ave, Chicago, IL 60622"]
+             ["Estelle's Café and Lounge", "2013 W North Ave, Chicago, IL 60647"]
+             ["FatPour ", "2005 W Division St, Chicago, IL 60622"]
+             ["Blue Line Bar and Grill", "1548 N Damen Ave, Chicago, IL 60622"]
+             ["The Local Option", "1102 W Webster Ave, Chicago, IL 60614"]
+             ["Compass Bar", "433 W Diversey Pkwy, Chicago, IL 60614"]
+             ["Atlas Brewing Company", "2747 N Lincoln Ave, Chicago, IL 60614"]
+             ["The Arrogant Frog Bar", "1365 W Fullerton Ave, Chicago, IL 60614"]
+             ["The Monkey's Paw", "2524 N Southport Ave, Chicago, IL 60614"]
+             ["Beer Bistro", "1061 W Madison St, Chicago, IL 60607"]
+             ["The Peasantry", "2723 N Clark St, Chicago, IL 60614"]
+             ["The Barrelhouse Flat", "2624 N Lincoln Ave, Chicago, IL 60614"]
+             ["Revolution Brewing", "2323 N Milwaukee Ave, Chicago, IL"]
+             ["The Gage", " 24 S Michigan Ave, Chicago, IL 60603"]
+             ["Miller's Pub", "134 S Wabash Ave, Chicago, IL 60603"]
+             ["Owen and Engine", "2700 N Western Ave, Chicago, IL 60647"]
+             ["Rocking Horse", "2535 N Milwaukee Ave, Chicago, IL 60647"]
+             ["Longman and Eagle", "2657 N Kedzie Ave, Chicago, IL 60647"]
+             ["Scofflaw", "3201 W Armitage Ave, Chicago, IL 60647"]
+             ["The Radler", "2375 N Milwaukee Ave, Chicago, IL 60647"]
+             ["The Owl", "2521 N Milwaukee Ave, Chicago, IL 60647"]]
 
 location_count = 0
 
