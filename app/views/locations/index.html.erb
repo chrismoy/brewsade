@@ -39,6 +39,13 @@
         Add more to your selection
       </button>
     </div>
+
+    <div class="text-center">
+      <h4 class="text-center">Don't see your beer? <br />Get SMS notifications when it shows up</h4>
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Sign up
+      </button>
+    </div>
   </div>
 
 
@@ -61,6 +68,45 @@
         </tr>
         <% end %>
       </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for @user, url: user_registration_path do |f| %>
+          <div class="row form-group col-sm-8 col-sm-offset-2">
+            <%= f.label :phone, class: 'control-label' %>
+            <%= f.telephone_field :phone, class: 'form-control', autofocus: 'autofocus', placeholder: 'Enter a phone number...' %>
+          </div>
+
+          <div class="row form-group col-sm-8 col-sm-offset-2">
+            <%= f.label :password, class: 'control-label' %>
+            <%= f.password_field :password, class: 'form-control', autofocus: 'autofocus', placeholder: 'At least 8 characters...' %>
+          </div>
+
+          <div class="row form-group col-sm-8 col-sm-offset-2">
+            <%= f.label :password_confirmation, class: 'control-label' %>
+            <%= f.password_field :password_confirmation, class: 'form-control', autofocus: 'autofocus' %>
+          </div>
+
+          <div class="col-sm-8 col-sm-offset-2 text-center form-buttons">
+            <p>
+              <%= f.submit "Submit", class: "btn btn-success" %>
+          </div>
+        <% end %>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
     </div>
   </div>
 </div>
