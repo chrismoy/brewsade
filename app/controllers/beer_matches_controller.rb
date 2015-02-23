@@ -5,10 +5,12 @@ class BeerMatchesController < ApplicationController
     longitude = params[:longitude]
     beer = Beer.find(params[:beer])
 
-    google_place = $client.spots(latitude.to_f, longitude.to_f, name: location)[0]
+    @google_place = $client.spots(latitude.to_f, longitude.to_f, name: location)[0]
 
-    location = Location.new(name: google_place.name,
-                            address: google_place.vicinity)
+    return nil if @google_place.nil?
+
+    location = Location.new(name: @google_place.name,
+                            address: @google_place.vicinity)
 
     if l = Location.find_by(address: location.address)
       l.beers << beer
@@ -18,6 +20,9 @@ class BeerMatchesController < ApplicationController
       location.save
     end
 
-    redirect_to root_url
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.js
+    end
   end
 end

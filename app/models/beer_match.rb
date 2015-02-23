@@ -8,7 +8,7 @@ class BeerMatch < ActiveRecord::Base
     follower_ids = Favorite.where(:beer_id => self.beer.id).collect { |favorite| favorite[:user_id] }
     followers = User.where(:id => follower_ids)
     followers.each do |follower|
-      beer_message(follower)
+      # beer_message(follower)
     end
   end
 

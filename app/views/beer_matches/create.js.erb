@@ -1,0 +1,9 @@
+var position = new google.maps.LatLng(@google_place.latitude, @google_place.longitude);
+var map = document.getElementById('map');
+
+var marker = new google.maps.Marker({
+    position: position,
+    map: map,
+    draggable: false
+    alert('hello');
+});
