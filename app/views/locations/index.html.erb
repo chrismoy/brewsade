@@ -14,7 +14,7 @@
       <%= text_field_tag 'location', nil, class: "form-control",
                           placeholder: "Where was it?",
                           onclick: "getLocation()"  %>
-      <%= submit_tag value = "Leave a tip!", class: "btn btn-primary" %>
+      <%= submit_tag value = "Leave a tip!", id: "tip-submit", class: "btn btn-primary" %>
     <% end %>
   </div>
   <div class="col-md-4 menu">
