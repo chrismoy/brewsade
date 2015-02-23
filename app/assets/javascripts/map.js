@@ -35,9 +35,6 @@
 
 // $(document).ready(plotMarkers)
 
-var markerCount = 0;
-var formSubmit = $("#tip-submit");
-
 function initialize() {
   if (window.Matches == undefined) {
     return;
