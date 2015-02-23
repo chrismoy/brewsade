@@ -14,7 +14,12 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    Favorite.find(params[:id]).destroy
-    redirect_to root_url
+    @favorite = Favorite.find(params[:id])
+    @favorite.destroy
+
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.js
+    end
   end
 end

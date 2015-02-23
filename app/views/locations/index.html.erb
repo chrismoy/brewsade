@@ -26,17 +26,19 @@
             <th>Brewery</th>
             <th>Type</th>
           </tr>
+          <% unless @favorites.nil? %>
           <% @favorites.each do |favorite| %>
-          <tr>
+          <tr id="fav_<%= favorite.id %>">
             <td><%= favorite.beer.name %></td>
             <td><%= favorite.beer.brewery %></td>
             <td><%= favorite.beer.beer_type %></td>
             <td class="trash">
-            <%= link_to favorite_path(favorite), method: :delete do %>
+            <%= link_to favorite_path(favorite), method: :delete, remote: true do %>
               <i class="fa fa-trash-o"></i>
             <% end %>
             </td>
           </tr>
+          <% end %>
           <% end %>
         </table>
       </div>
@@ -51,10 +53,15 @@
     </div>
 
     <div class="text-center">
+      <% if user_signed_in? %>
+      <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-lg" %>
+      <% else %>
       <h4 class="text-center">Don't see your beer? <br />Get SMS notifications when it shows up</h4>
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
         Sign up
       </button>
+      <%= link_to "or sign in", new_user_session_path %>
+      <% end %>
     </div>
   </div>
 

@@ -72,7 +72,6 @@ function addMarker(position, map) {
       map: map,
       draggable: false
   });
-  console.log("hello");
 };
 
 $(document).ready(initialize);

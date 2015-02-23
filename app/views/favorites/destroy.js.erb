@@ -1,0 +1,5 @@
+var $self = $("#fav_<%= @favorite.id %>");
+
+$self.slideUp(200, function() {
+  $self.remove();
+});

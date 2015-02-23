@@ -4,13 +4,19 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
+
+    if user_signed_in?
+      @user = current_user
+    else
+      @user = User.new
+    end
+
     @beers = Beer.all
-    @favorites = Favorite.all
-    @favorite_beers = Favorite.all.collect { |favorite| favorite[:beer_id]}
+    @favorites = @user.favorites
+
+    @favorite_beers = @favorites.collect { |favorite| favorite[:beer_id]}
     @beer_matches = BeerMatch.where(:beer_id => @favorite_beers).collect { |match| match[:location_id]}
     @beer_match_locations = Location.where(:id => @beer_matches)
-    @user = User.new
   end
 
   # GET /locations/1

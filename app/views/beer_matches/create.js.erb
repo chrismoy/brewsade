@@ -1,14 +1,4 @@
-var position = new google.maps.LatLng(<%= @google_place.lat %>, <%= @google_place.lng %>);
-console.log(position);
-console.log(map);
-
-function addMarker(position, map) {
-  var marker = new google.maps.Marker({
-      position: position,
-      map: map,
-      draggable: false
-  });
-  console.log("hi");
-};
+var position = new google.maps.LatLng(<%= @google_place.lat %>,
+                                        <%= @google_place.lng %>);
 
 addMarker(position, map);
