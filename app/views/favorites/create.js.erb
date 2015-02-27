@@ -1,0 +1,16 @@
+$('#favorite-beer-table').append("<%= j(render @favorite) %>");
+
+<% @user = current_user %>
+<% @favorites = @user.favorites %>
+<% @favorite_beers = @favorites.collect { |favorite| favorite[:beer_id] } %>
+<% @beer_matches = BeerMatch.where(:beer_id => @favorite_beers).collect { |match| match[:location_id]} %>
+<% @beer_match_locations = Location.where(:id => @beer_matches) %>
+
+window.Matches = <%= @beer_match_locations.to_json.html_safe %>;
+
+for (var i = 0; i < window.Matches.length; i++) {
+  var place = window.Matches[i];
+  var position = new google.maps.LatLng(place.latitude, place.longitude);
+
+  addMarker(position, map);
+};

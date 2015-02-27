@@ -1,0 +1,10 @@
+<tr id="favorite_<%= favorite.id %>">
+  <td><%= favorite.beer.name %></td>
+  <td><%= favorite.beer.brewery %></td>
+  <td><%= favorite.beer.beer_type %></td>
+  <td class="edit" style="display: none;">
+  <%= link_to favorite_path(favorite), method: :delete, remote: true do %>
+    <i class="fa fa-trash-o"></i>
+  <% end %>
+  </td>
+</tr>

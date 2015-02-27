@@ -5,11 +5,7 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
 
-    if user_signed_in?
-      @user = current_user
-    else
-      @user = User.new
-    end
+    @user = user_signed_in? ? current_user : User.new
 
     @beers = Beer.all
     @favorites = @user.favorites

@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
 
   has_many :favorites
   has_many :beers, through: :favorites
+
+  def move_to(user)
+    favorites.update_all(user_id: user.id)
+  end
 end

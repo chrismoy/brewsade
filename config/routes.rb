@@ -2,11 +2,11 @@
 
   resources :notifications, :only => [:create, :destroy]
 
-  get 'notifications/destroy'
-
   root      'locations#index'
 
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: "users/registrations"
+  }
 
   resources :locations
 

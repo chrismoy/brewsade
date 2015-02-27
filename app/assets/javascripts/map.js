@@ -35,6 +35,8 @@
 
 // $(document).ready(plotMarkers)
 
+markers = [];
+
 function initialize() {
   if (window.Matches == undefined) {
     return;
@@ -67,11 +69,13 @@ function initialize() {
 };
 
 function addMarker(position, map) {
+
   var marker = new google.maps.Marker({
       position: position,
       map: map,
       draggable: false
   });
+  markers.push(marker);
 };
 
 $(document).ready(initialize);

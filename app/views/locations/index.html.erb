@@ -21,30 +21,24 @@
     <div class="row">
       <div class="col-xs-12">
         <table class="table">
-          <tr>
-            <th>Name</th>
-            <th>Brewery</th>
-            <th>Type</th>
-          </tr>
-          <% unless @favorites.nil? %>
-          <% @favorites.each do |favorite| %>
-          <tr id="fav_<%= favorite.id %>">
-            <td><%= favorite.beer.name %></td>
-            <td><%= favorite.beer.brewery %></td>
-            <td><%= favorite.beer.beer_type %></td>
-            <td class="trash">
-            <%= link_to favorite_path(favorite), method: :delete, remote: true do %>
-              <i class="fa fa-trash-o"></i>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Brewery</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody id="favorite-beer-table">
+            <% unless @favorites.nil? %>
+            <%= render @favorites %>
             <% end %>
-            </td>
-          </tr>
-          <% end %>
-          <% end %>
+          </tbody>
         </table>
       </div>
     </div>
 
-    <%= check_box_tag "trash" %>
+    <%= label_tag "edit" %>
+    <%= check_box_tag "edit" %>
 
     <div class="col-xs-12 btn-div">
       <button type="button" class="btn btn-select" id="new-beers-btn">
@@ -52,19 +46,23 @@
       </button>
     </div>
 
-    <div class="text-center">
-      <% if user_signed_in? %>
+    <div class="text-center sign-in-group">
+      <% if current_user.guest? %>
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signupModal">
+        Become a member
+      </button>
+      <%= link_to "or sign in", new_user_session_path, method: :delete %>
+      <% elsif user_signed_in? %>
       <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-lg" %>
       <% else %>
       <h4 class="text-center">Don't see your beer? <br />Get SMS notifications when it shows up</h4>
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signupModal">
         Sign up
       </button>
       <%= link_to "or sign in", new_user_session_path %>
       <% end %>
     </div>
   </div>
-
 
   <div class="shade">
     <button type="button" class="btn btn-danger" id="back-btn">
@@ -79,9 +77,9 @@
         </tr>
         <% @beers.each do |beer| %>
         <tr>
-          <td><%= link_to beer.name, favorites_path(:beer_id => beer.id), :method => "post" %></td>
-          <td><%= link_to beer.brewery, favorites_path(beer), :method => "post" %></td>
-          <td><%= link_to beer.beer_type, favorites_path(beer), :method => "post" %></td>
+          <td><%= link_to beer.name, favorites_path(beer_id: beer.id), :method => "post", remote: true %></td>
+          <td><%= beer.brewery %></td>
+          <td><%= beer.beer_type %></td>
         </tr>
         <% end %>
       </table>
@@ -89,49 +87,19 @@
   </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
-      </div>
-      <div class="modal-body">
-        <%= form_for @user, url: user_registration_path do |f| %>
-          <div class="row form-group col-sm-8 col-sm-offset-2">
-            <%= f.label :phone, class: 'control-label' %>
-            <%= f.telephone_field :phone, class: 'form-control', autofocus: 'autofocus', placeholder: 'Enter a phone number...' %>
-          </div>
-
-          <div class="row form-group col-sm-8 col-sm-offset-2">
-            <%= f.label :password, class: 'control-label' %>
-            <%= f.password_field :password, class: 'form-control', autofocus: 'autofocus', placeholder: 'At least 8 characters...' %>
-          </div>
-
-          <div class="row form-group col-sm-8 col-sm-offset-2">
-            <%= f.label :password_confirmation, class: 'control-label' %>
-            <%= f.password_field :password_confirmation, class: 'form-control', autofocus: 'autofocus' %>
-          </div>
-
-          <div class="col-sm-8 col-sm-offset-2 text-center form-buttons">
-            <p>
-              <%= f.submit "Submit", class: "btn btn-success" %>
-          </div>
-        <% end %>
-      </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div> -->
-    </div>
-  </div>
-</div>
+<%= render 'signup_modal' %>
+<%= render 'startup_modal' %>
 
 <script type="text/javascript">
   window.Matches = <%= @beer_match_locations.to_json.html_safe %>;
   var $latitudeField = $("#latitude");
   var $longitudeField = $("#longitude");
+
+  <% unless user_signed_in? %>
+    $(document).ready( function() {
+      $('#startupModal').modal('show');
+    });
+  <% end %>
 </script>
 
 

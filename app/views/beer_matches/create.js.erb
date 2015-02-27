@@ -1,4 +1,6 @@
 var position = new google.maps.LatLng(<%= @google_place.lat %>,
                                         <%= @google_place.lng %>);
 
-addMarker(position, map);
+<% if current_user.beers.include?(@beer) %>
+  addMarker(position, map);
+<% end %>

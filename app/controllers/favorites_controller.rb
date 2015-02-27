@@ -6,10 +6,14 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.new  # This action doesn't assign favorites a user. The first like I command lined to forace a user.
     @favorite.beer_id = params[:beer_id]
     @favorite.user = current_user
-    if @favorite.save
-      redirect_to :back
-    else
-      render 'locations/index', :alert => "Something went wrong"
+
+    respond_to do |format|
+      if @favorite.save
+        format.html { redirect_to :back }
+        format.js
+      else
+        format.html { render 'locations/index', :alert => "Something went wrong" }
+      end
     end
   end
 

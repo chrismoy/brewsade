@@ -4,7 +4,7 @@
     overflow: hidden;
     background-color: #EFEFEF;
     height: 100%;
-    @media (max-width: 991px) { height: 67% };
+    @media (max-width: 991px) { height: 60% };
     padding: 0;
     #map {
       height: 100%;
@@ -15,16 +15,21 @@
   }
   .menu {
     height: 100%;
-    @media (max-width: 991px) { height: 67% };
+    @media (max-width: 991px) { height: 40% };
     background-color: #FEFEFE;
+    overflow: auto;
     .table {
       width: 100%;
       .trash a {
         color: red;
       }
     }
+    label[for=edit] {
+      display: inline-block;
+    }
     .btn-div {
       text-align: center;
+      margin-bottom: 100px;
     }
   }
   #tip-btn {
@@ -93,7 +98,11 @@
   }
 }
 
-.btn-select {
+.sign-in-group {
+  position: absolute;
+  @media (max-width: 991px) { position: fixed; };
+  bottom: 10px;
+  left: 10px;
 }
 
 
