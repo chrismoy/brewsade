@@ -13,9 +13,10 @@ before_filter :configure_sign_up_params, only: [:create]
     if @user.save
       current_user.move_to(@user) if current_user && current_user.guest?
       sign_up("user", @user)
-      redirect_to root_path
+      redirect_to root_url
     else
-      render :new
+      flash[:danger] = "Could not save"
+      redirect_to root_url
     end
   end
 

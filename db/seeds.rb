@@ -101,8 +101,6 @@ end
 
 puts "#{location_count} locations have been added to the database"
 
-# beer_matches = [[1,1],[1,2],[1,3],[2,20],[2,21],[2,22],[3,23],[3,24],[3,25]]
-
 
 
 
