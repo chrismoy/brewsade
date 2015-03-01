@@ -1,7 +1,9 @@
 @import "bootstrap-sprockets";
-@import "bootstrap/swatch_variables";
-@import "bootstrap/bootstrap-custom";
-@import "bootstrap/bootswatch";
+@import "bootstrap/variables";
+@import "bootswatch/flatly/variables";
+// @import "bootstrap/bootstrap-custom";
+@import "bootstrap";
+@import "bootswatch/flatly/bootswatch";
 @import "globals/fonts";
 @import "globals/main";
 @import "globals/scaffolds";
