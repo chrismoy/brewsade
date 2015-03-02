@@ -45,20 +45,11 @@
           <%= content_tag(:div, message,
                             class: "alert alert-#{message_type}") %>
         <% end %>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Brewery</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody id="favorite-beer-table">
-            <% unless @favorites.nil? %>
-            <%= render @favorites %>
-            <% end %>
-          </tbody>
-        </table>
+
+        <div class="list-group favorites-list">
+          <%= render @favorites %>
+        </div>
+
       </div>
     </div>
 

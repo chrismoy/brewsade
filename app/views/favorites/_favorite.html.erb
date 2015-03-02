@@ -1,10 +1,5 @@
-<tr id="favorite_<%= favorite.id %>">
-  <td><%= favorite.beer.name %></td>
-  <td><%= favorite.beer.brewery %></td>
-  <td><%= favorite.beer.beer_type %></td>
-  <td class="edit" style="display: none;">
-  <%= link_to favorite_path(favorite), method: :delete, remote: true do %>
-    <i class="fa fa-trash-o"></i>
-  <% end %>
-  </td>
-</tr>
+<div class="list-group-item favorite-panel">
+  <h3 class="beer-name"><%= favorite.beer.name %></h3>
+  <h4 class="brewery"><%= favorite.beer.brewery %></h4>
+  <h5 class="beer-type"><%= favorite.beer.beer_type %></h5>
+</div>
