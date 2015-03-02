@@ -73,7 +73,8 @@ function addMarker(position, map) {
   var marker = new google.maps.Marker({
       position: position,
       map: map,
-      draggable: false
+      draggable: false,
+      animation: google.maps.Animation.DROP
   });
   markers.push(marker);
 };

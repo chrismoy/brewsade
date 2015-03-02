@@ -1,0 +1,7 @@
+ <%= link_to favorites_path(beer_id: beer.id), method: :post, remote: true do %>
+  <div class="list-group-item beer-panel" id="beer_<%= beer.id %>">
+    <h3 class="beer-name"><%= beer.name %></h3>
+    <h4 class="brewery"><%= beer.brewery %></h4>
+    <h5 class="beer-type"><%= beer.beer_type %></h5>
+  </div>
+<% end %>

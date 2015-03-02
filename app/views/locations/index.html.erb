@@ -3,9 +3,6 @@
     <div id="map"></div>
     <button type="button" class="btn btn-primary" id="tip-btn">Did you make a find?</button>
     <%= form_tag beer_matches_path, id: "tip-box", remote: true do %>
-      <button type="button" class="btn btn-link" id="close-tip-btn">
-        <i class="fa fa-times"></i>
-      </button>
       <%= hidden_field_tag :latitude, "", id: "latitude" %>
       <%= hidden_field_tag :longitude, "", id: "longitude" %>
       <%= select_tag 'beer', options_from_collection_for_select(@beers, "id", "name"),
@@ -14,28 +11,22 @@
       <%= text_field_tag 'location', nil, class: "form-control",
                           placeholder: "Where was it?",
                           onclick: "getLocation()"  %>
-      <%= submit_tag value = "Leave a tip!", id: "tip-submit", class: "btn btn-primary" %>
+      <%= submit_tag value = "Leave a tip!", id: "tip-submit", class: "btn btn-primary col-xs-10" %>
+      <button class="col-xs-2 close-tip" id="close-tip-btn">
+        <%= icon('times', '', class: "fa-lg") %>
+      </button>
     <% end %>
     <div class="shade">
       <button type="button" class="btn btn-danger" id="back-btn">
         <i class="fa fa-times fa-lg"></i>
       </button>
-      <div class="bottom-left">
-        <table class="table bottom-left-table">
-          <tr>
-            <th>Name</th>
-            <th>Brewery</th>
-            <th>Type</th>
-          </tr>
-          <% @beers.each do |beer| %>
-          <tr>
-            <td><%= link_to beer.name, favorites_path(beer_id: beer.id), :method => "post", remote: true %></td>
-            <td><%= beer.brewery %></td>
-            <td><%= beer.beer_type %></td>
-          </tr>
-          <% end %>
-        </table>
+
+      <div class="col-xs-offset-1 col-xs-10 beer-div">
+        <div class="list-group beer-list">
+          <%= render @beers %>
+        </div>
       </div>
+
     </div>
   </div>
   <div class="col-md-4 menu">
@@ -54,9 +45,6 @@
         </div>
       </div>
     </div>
-
-    <%= label_tag "edit" %>
-    <%= check_box_tag "edit" %>
 
     <div class="main-button-group">
       <button type="button" class="btn btn-default btn-add" id="new-beers-btn">
