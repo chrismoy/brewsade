@@ -38,11 +38,15 @@
     height: 100%;
     @media (max-width: 991px) { height: 40% };
     background-color: #FEFEFE;
-    overflow: auto;
-    .table {
+    overflow: hidden;
+    .favorites-div {
+      position: absolute;
       width: 100%;
-      .trash a {
-        color: red;
+      height: 100%;
+      padding: 0;
+      overflow-y: auto;
+      .favorites-list {
+        width: 100%;
       }
     }
     label[for=edit] {
@@ -54,6 +58,8 @@
       @media (max-width: 991px) { position: fixed; };
       bottom: 0;
       left: 0;
+      height: 65px;
+      background-color: rgba(0,0,0,0.2);
       .btn-add {
         position: absolute;
         bottom: 10px;
@@ -63,6 +69,12 @@
         position: absolute;
         bottom: 10px;
         right: 10px;
+        .btn-signin {
+          color: white;
+        }
+        .btn-signout {
+          color: white;
+        }
       }
     }
   }

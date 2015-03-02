@@ -1,4 +1,4 @@
-$('#favorite-beer-table').append("<%= j(render @favorite) %>");
+$('.favorites-list').append("<%= j(render @favorite) %>");
 
 <% @user = current_user %>
 <% @favorites = @user.favorites %>

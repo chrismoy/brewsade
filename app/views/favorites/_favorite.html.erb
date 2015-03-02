@@ -1,5 +1,13 @@
-<div class="list-group-item favorite-panel">
+<div class="list-group-item favorite-panel" id="favorite_<%= favorite.id %>">
   <h3 class="beer-name"><%= favorite.beer.name %></h3>
   <h4 class="brewery"><%= favorite.beer.brewery %></h4>
   <h5 class="beer-type"><%= favorite.beer.beer_type %></h5>
+  <span class="remove-icon">
+    <%= icon('times', '') %>
+  </span>
+  <%= link_to favorite, method: :delete, remote: true do %>
+    <span class="remove-icon">
+      <%= icon('times', '') %>
+    </span>
+  <% end %>
 </div>
