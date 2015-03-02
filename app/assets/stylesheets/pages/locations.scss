@@ -13,25 +13,6 @@
       border: 1px solid black;
     }
   }
-  .menu {
-    height: 100%;
-    @media (max-width: 991px) { height: 40% };
-    background-color: #FEFEFE;
-    overflow: auto;
-    .table {
-      width: 100%;
-      .trash a {
-        color: red;
-      }
-    }
-    label[for=edit] {
-      display: inline-block;
-    }
-    .btn-div {
-      text-align: center;
-      margin-bottom: 100px;
-    }
-  }
   #tip-btn {
     position: absolute;
     top: 10px;
@@ -50,6 +31,39 @@
       right: -35px;
       bottom: 0;
       color: black;
+    }
+  }
+  .menu {
+    position: relative;
+    height: 100%;
+    @media (max-width: 991px) { height: 40% };
+    background-color: #FEFEFE;
+    overflow: auto;
+    .table {
+      width: 100%;
+      .trash a {
+        color: red;
+      }
+    }
+    label[for=edit] {
+      display: inline-block;
+    }
+    .main-button-group {
+      position: absolute;
+      width: 100%;
+      @media (max-width: 991px) { position: fixed; };
+      bottom: 0;
+      left: 0;
+      .btn-add {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+      }
+      .signup-signin {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+      }
     }
   }
   .shade {
@@ -97,14 +111,6 @@
     }
   }
 }
-
-.sign-in-group {
-  position: absolute;
-  @media (max-width: 991px) { position: fixed; };
-  bottom: 10px;
-  right: 10px;
-}
-
 
 
 

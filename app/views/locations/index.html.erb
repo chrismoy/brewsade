@@ -65,27 +65,22 @@
     <%= label_tag "edit" %>
     <%= check_box_tag "edit" %>
 
-    <div class="col-xs-12 btn-div">
-      <button type="button" class="btn btn-select" id="new-beers-btn">
-        Add more to your selection
+    <div class="main-button-group">
+      <button type="button" class="btn btn-select btn-add" id="new-beers-btn">
+        <%= icon('plus', '', class: "fa-lg") %>
       </button>
-    </div>
-
-    <div class="text-center sign-in-group">
-      <% if current_user.guest? %>
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signupModal">
-        Become a member
-      </button>
-      or<%= link_to " sign in", user_session_path, method: :post %>
-      <% elsif user_signed_in? %>
-      <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-lg" %>
-      <% else %>
-      <h4 class="text-center">Don't see your beer? <br />Get SMS notifications when it shows up</h4>
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signupModal">
-        Sign up
-      </button>
-      <%= link_to "or sign in", user_session_path, method: :post %>
-      <% end %>
+      <div class="signup-signin">
+        <% if current_user.guest? %>
+        <button type="button" class="btn btn-primary btn-signup" data-toggle="modal" data-target="#signupModal">
+          Become a member
+        </button>
+        <button type="button" class="btn btn-info">
+          Log In
+        </button>
+        <% else user_signed_in? %>
+        <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-signin" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
