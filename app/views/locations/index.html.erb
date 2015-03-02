@@ -55,7 +55,9 @@
         <button type="button" class="btn btn-primary btn-signup" data-toggle="modal" data-target="#signupModal">
           Become a member
         </button>
-        <%= link_to "Log In", new_user_session_path, class: "btn btn-info btn-signin" %>
+        <button type="button" class="btn btn-info btn-signin" data-toggle="modal" data-target="#signinModal">
+          Log In
+        </button>
         <% else user_signed_in? %>
         <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-signout" %>
         <% end %>
@@ -65,6 +67,7 @@
 </div>
 
 <%= render 'signup_modal' %>
+<%= render 'signin_modal' %>
 
 <script type="text/javascript">
   window.Matches = <%= @beer_match_locations.to_json.html_safe %>;
