@@ -52,7 +52,7 @@ function initialize() {
       var map_id = document.getElementById('map');
       var map_options = {
         center: currentPosition,
-        zoom: 15,
+        zoom: 14,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
 
